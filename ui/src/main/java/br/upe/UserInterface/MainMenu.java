@@ -336,10 +336,8 @@ public class MainMenu {
 
         if(choice != 0 && choice <= counter){
             int innerCount = 1;
-            System.out.println("outfor");
             for(Session session : sessionController.getAllEventSessions(stateController.getCurrentEvent().getUuid())){
                 if(innerCount == choice){
-                    System.out.println("ifinner");
                     sessionController.closeCurrentSession();
                     sessionController.changeCurrentSession(session.getUuid());
                     return;
