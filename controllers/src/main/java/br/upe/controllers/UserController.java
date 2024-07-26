@@ -1,5 +1,6 @@
 package br.upe.controllers;
 
+import br.upe.operations.HasherInterface;
 import br.upe.pojos.*;
 
 public class UserController {
@@ -38,7 +39,7 @@ public class UserController {
         } else {
             source = KeeperInterface.createCommomUser();
         }
-        source.setPassword(userPassword);
+        source.setPassword(HasherInterface.hash(userPassword));
         crudController.userCRUD.updateUser(stateController.getCurrentUser().getUuid(), source);
     }
 
