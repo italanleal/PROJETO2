@@ -1,5 +1,6 @@
-package br.upe.operations;
+package operations;
 
+import br.upe.operations.EventCRUD;
 import br.upe.pojos.GreatEvent;
 import org.junit.jupiter.api.*;
 

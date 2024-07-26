@@ -1,5 +1,7 @@
-package br.upe.operations;
+package operations;
 
+import br.upe.operations.SessionCRUD;
+import br.upe.operations.SubscriptionCRUD;
 import br.upe.pojos.Session;
 import br.upe.pojos.Subscription;
 import org.junit.jupiter.api.*;
