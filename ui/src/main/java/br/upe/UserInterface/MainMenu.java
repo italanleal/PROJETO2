@@ -87,12 +87,12 @@ public class MainMenu {
                                 System.out.println("Invalid choice. Please try again.");
                         }
                     } while (choice >= 4);
-                        break;
-                        case 3:
-                            running = false;
-                            break;
-                        default:
-                            System.out.println("Invalid choice. Please try again.");
+                    break;
+                case 3:
+                    running = false;
+                    break;
+                default:
+                    System.out.println("Invalid choice. Please try again.");
             }
         }
     }
@@ -192,7 +192,8 @@ public class MainMenu {
                     viewSubscriptions();
                     break;
                 case 3:
-                   // viewSubmissions();
+
+                    // viewSubmissions();
                     break;
                 case 4:
                     System.out.print("Enter your current password: ");
@@ -277,7 +278,7 @@ public class MainMenu {
                     manageSession();
                     break;
                 case 7:
-                   return;
+                    return;
                 default:
                     System.out.println("Invalid choice. Please try again.");
             }
@@ -318,7 +319,8 @@ public class MainMenu {
     public void viewAllSessions(){
         Scanner scanner = new Scanner(System.in);
         int counter = 1;
-        for(Session session : stateController.getCurrentEvent().getSessions()){
+        for(Session session : sessionController.getAllEventSessions(stateController.getCurrentEvent().getUuid())){
+
             if (session != null) {
                 System.out.println("index [ " + counter + " ]");
                 System.out.println("Session: " + session.getDescritor());
@@ -336,10 +338,9 @@ public class MainMenu {
 
         if(choice != 0 && choice <= counter){
             int innerCount = 1;
-            System.out.println("outfor");
-            for(Session session : stateController.getCurrentEvent().getSessions()){
+            for(Session session : sessionController.getAllEventSessions(stateController.getCurrentEvent().getUuid())){
                 if(innerCount == choice){
-                    System.out.println("ifinner");
+
                     sessionController.closeCurrentSession();
                     sessionController.changeCurrentSession(session.getUuid());
                     return;
