@@ -192,6 +192,7 @@ public class MainMenu {
                     viewSubscriptions();
                     break;
                 case 3:
+
                     // viewSubmissions();
                     break;
                 case 4:
@@ -319,6 +320,7 @@ public class MainMenu {
         Scanner scanner = new Scanner(System.in);
         int counter = 1;
         for(Session session : sessionController.getAllEventSessions(stateController.getCurrentEvent().getUuid())){
+
             if (session != null) {
                 System.out.println("index [ " + counter + " ]");
                 System.out.println("Session: " + session.getDescritor());
@@ -338,6 +340,7 @@ public class MainMenu {
             int innerCount = 1;
             for(Session session : sessionController.getAllEventSessions(stateController.getCurrentEvent().getUuid())){
                 if(innerCount == choice){
+
                     sessionController.closeCurrentSession();
                     sessionController.changeCurrentSession(session.getUuid());
                     return;
