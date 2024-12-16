@@ -215,8 +215,8 @@ public class MainMenu {
         Date subscriptionDate = new Date();
 
         Subscription subscription = KeeperInterface.createSubscription();
-        subscription.setUuid(userUuid);
-        subscription.setUuid(eventUuid);
+        subscription.setId(userUuid);
+        subscription.setId(eventUuid);
         subscription.setDate(subscriptionDate);
 
         // Tentar criar a inscrição
@@ -283,6 +283,9 @@ public class MainMenu {
                     break;
                 case 4:
                     //fazer o manejador de eventos
+                    //um codigo que mostre todos os eventos criados pelo usuario
+                    //e permita vc escolher um entre eles
+                    //ao escolher leva ao displayEventMenu, que ai vc pode modificar o evento
                 case 5:
                     running = false;
                     break;
@@ -313,6 +316,7 @@ public class MainMenu {
             switch (choice) {
                 case 1:
                     manageSubmissions();
+                    //a ser implementado
                     break;
                 case 2:
                     updateEventDescritor();
@@ -475,7 +479,7 @@ public class MainMenu {
     }
 
     private void manageSubmissions() {
-        // Implement manage submissions functionality
+        // menu que leva a tela de submissiões, onde vc pode apagar, editar ou adicionar uma submissão
     }
 
     private void updateEventDescritor() {
